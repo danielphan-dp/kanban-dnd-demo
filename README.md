@@ -2,10 +2,8 @@
 
 Install
 
-`npm install --g --production windows-build-tools`
+1. (Optional) In case of receiving `gyp` errors: `npm install --g --production windows-build-tools`
 
-`npm install --force`
+2. `npm install` or `npm install --force`
 
-Run
-
-`npm start`
+Run `npm start`
