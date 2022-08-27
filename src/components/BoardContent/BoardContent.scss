@@ -1,0 +1,70 @@
+@import '../_settings/global_scss_settings';
+
+$app-bar-bg-color: rgb(128,128,128);
+
+.board-content {
+	display: flex;
+	height: $board-content-height;
+
+	&:after {
+		content: "";
+		flex: 0 0 $padding;
+	}
+
+	.column-drop-preview {
+		background-color: rgba(150, 150, 200, 0.2);
+		border: 2px dashed #abc;
+		margin: 5px 45px 5px 5px;
+		height: 85vh;
+	}
+
+	// styling for column adding functionality
+	.add-new-column {
+		background-color: darken(white, 10);
+		width: 250px;
+		max-width: 250px;
+		height: 40px;
+		line-height: 40px;
+		user-select: none;
+		cursor: pointer;
+		font-size: 15px;
+		border-radius: 3px;
+		margin-left: $padding / 2;
+		margin-top: 5px;
+		i {
+			margin-left: $padding / 2;
+			margin-right: $padding / 2;
+		}
+		&:hover {
+			background-color: darken(white, 20);
+		}
+		&:active {
+			background-color: darken(white, 40);
+		}
+	}
+
+	.enter-new-column {
+		user-select: none;
+		width: 250px;
+		max-width: 250px;
+		background-color: darken(white, 10);
+		border-radius: 3px;
+		padding: 10px;
+		margin-top: 5px;
+		margin-left: $padding / 2;
+		button {
+			margin-right: $padding / 2;
+			margin-top: $padding / 2;
+		}
+		input.input-enter-new-column {
+			margin: 5px 0;
+		}
+	}
+
+	.form-control {
+		border: none;
+		&:focus {
+			box-shadow: none;
+		}
+	}
+}

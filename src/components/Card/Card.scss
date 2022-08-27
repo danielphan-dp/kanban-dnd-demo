@@ -1,0 +1,18 @@
+@import '../_settings/global_scss_settings';
+
+.card-list-item {
+  user-select: none;
+  background-color: white;
+  padding: $padding;
+  margin-bottom: $padding;
+  border-radius: $card-border-radius;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  img.card-cover {
+    display: block;
+    width: calc(100% + 2 * #{$padding});
+    margin: -$padding 0 $padding (-$padding);
+    border-top-left-radius: $card-border-radius;
+    border-top-right-radius: $card-border-radius;
+  }
+}

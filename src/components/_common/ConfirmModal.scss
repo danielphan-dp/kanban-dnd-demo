@@ -1,0 +1,12 @@
+.modal {
+  user-select: none !important;
+}
+
+.btn {
+  border-radius: 3px;
+}
+
+.btn:focus, btn:active {
+  box-shadow: none;
+  outline: none;
+}

@@ -1,0 +1,103 @@
+@import "~bootstrap/scss/bootstrap";
+@import '../_settings/_global_scss_settings.scss';
+
+$column-header-height: 36px;
+$column-footer-height: 36px;
+$column-border-radius: 6px;
+$card-border-radius: 3px;
+$board-bg-color: darken(white, 5);
+$list-bg-color: rgb(208,208,208);
+$app-bar-bg-color: rgb(128,128,128);
+$common-element-bg: darken($list-bg-color, 15);
+
+body {
+	margin: 0;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 14px;
+	line-height: 1.3em;
+}
+
+.App {
+	// general content
+	background-color: $board-bg-color;
+	height: 100vh;
+	display: grid;
+	grid-template-rows: 40px 50px 1fr;
+	line-height: 1.3em;
+	.icon {
+		font-size: 14px;
+		margin: 3px;
+	}
+	.trello-container {
+		margin: 0 15px;
+		padding: 0;
+	}
+
+	textarea:focus,
+	textarea.form-control:focus,
+	input.form-control:focus,
+	input[type=text]:focus,
+	input[type=password]:focus,
+	input[type=email]:focus,
+	input[type=number]:focus,
+	[type=text].form-control:focus,
+	[type=password].form-control:focus,
+	[type=email].form-control:focus,
+	[type=tel].form-control:focus,
+	[contenteditable].form-control:focus {
+		box-shadow: none;
+		border: None;
+	}
+
+	.btn:focus, .btn:active {
+		box-shadow: none;
+		outline: none;
+	}
+
+	// editable styling for editing column title
+	.column-title-editable {
+		background-color: inherit;
+		border-radius: 3px;
+		border: none;
+		font-size: inherit;
+		font-weight: inherit;
+		cursor: pointer;
+		&:focus {
+			background-color: white;
+		}
+	}
+
+	// cancel icon used for the entire app
+	span.cancel-icon {
+		margin-left: $padding;
+		cursor: pointer;
+		i {
+			font-size: 18px;
+			background-color: #ee5253;
+		}
+	}
+
+	// scrollbar configs
+	overflow-x: auto;
+	overflow-y: auto;
+	&::-webkit-scrollbar {
+		width: 12px;
+		height: 12px;
+	}
+	&::-webkit-scrollbar-track {
+		-webkit-border-radius: 3px;
+		border-radius: 3px;
+		background-color: darken(white, 5);
+		&:hover {
+			background-color: darken(white, 10);
+		}
+	}
+	&::-webkit-scrollbar-thumb {
+		-webkit-border-radius: 3px;
+		border-radius: 3px;
+		background: darken(white, 20);
+		&:hover {
+			background-color: darken(white, 30);
+		}
+	}
+}

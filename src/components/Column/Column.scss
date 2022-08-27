@@ -1,0 +1,153 @@
+@import '../_settings/_global_scss_settings.scss';
+
+$column-height: calc(#{$board-content-height} - #{$padding * 2} - 100px);
+
+i {
+	margin-right: 0.5rem;
+}
+
+.column {
+	user-select: none;
+	padding: calc(#{$padding} / 2);
+	flex: 0 0 auto;
+	width: 300px;
+	height: $column-height;
+
+	> * {
+		background-color: $list-bg-color;
+		color: black;
+		padding: 0 $padding;
+	}
+
+	header.column-drag-handle {
+		user-select: none;
+		cursor: pointer;
+		padding: $padding $padding;
+		height: $column-header-height * 1.3;
+		line-height: $column-header-height * 1.3;
+		vertical-align: middle;
+		font-size: 16px;
+		font-weight: bold;
+		border-top-left-radius: $column-border-radius;
+		border-top-right-radius: $column-border-radius;
+		display: flex;
+		.column-title {
+			flex: 90%;
+		}
+		.column-dropdown-actions {
+			flex: 10%;
+			.dropdown {
+				button.dropdown-btn {
+					margin-bottom: 15px;
+					line-height: 10px;
+					font-size: 21px;
+					letter-spacing: 2px;
+					background-color: $list-bg-color;
+					color: black;
+					border: none;
+					font-weight: bold;
+					&:after {
+						content: "...";
+						border: none;
+					}
+				}
+			}
+
+			.dropdown-menu {
+				padding: 0;
+				min-width: 200px;
+				a.dropdown-item {
+					padding: 0.1rem 1rem;
+					font-size: 14px;
+					&:not(:last-child) {
+						border-bottom: 1px solid $list-bg-color;
+					}
+					&:first-child:hover, &:first-child:focus {
+						color: black;
+						border-top-left-radius: 5px;
+						border-top-right-radius: 5px;
+					}
+					&:last-child:hover, &:last-child:focus {
+						border-bottom-left-radius: 5px;
+						border-bottom-right-radius: 5px;
+					}
+				}
+			}
+		}
+	}
+
+	.add-new-card-area {
+		button {
+			margin-right: $padding / 2;
+			margin-top: $padding;
+			margin-bottom: $padding;
+		}
+		.textarea-enter-new-card {
+			min-height: 60px;
+			max-height: 180px;
+			//margin-bottom: $padding;
+		}
+	}
+
+	footer {
+		user-select: none;
+		padding-left: 10px;
+		height: $column-footer-height;
+		line-height: $column-footer-height;
+		font-size: 16px;
+		font-weight: normal;
+		border-bottom-left-radius: $column-border-radius;
+		border-bottom-right-radius: $column-border-radius;
+		padding-bottom: 45px;
+		.footer-actions {
+			border-radius: $column-border-radius;
+			background-color: darken(white, 10);
+			cursor: pointer;
+			&:hover {
+				background-color: darken(white, 20);
+			}
+			&:active {
+				background-color: darken(white, 40);
+			}
+		}
+		.footer-icon {
+			margin-left: 10px;
+		}
+	}
+
+	.card-list {
+		margin: 0;
+		max-height: calc(#{$column-height} - #{$column-header-height} - #{$column-footer-height});
+		overflow-y: auto;
+
+		// scrollbar configs
+		&::-webkit-scrollbar {
+			-webkit-appearance: none;
+		}
+		&::-webkit-scrollbar:vertical {
+			width: 0;
+		}
+		&::-webkit-scrollbar-thumb {
+			background-color: darken($list-bg-color, 40);
+			border-right: 5px solid $list-bg-color;
+		}
+		&::-webkit-scrollbar-thumb:hover {
+			background-color: darken($list-bg-color, 30);
+		}
+
+		// drag-drop configs
+		.card-ghost {
+			transition: transform 0.18s ease;
+			transform: rotateZ(5deg);
+		}
+		.card-ghost-drop {
+			transition: transform 0.18s ease-in-out;
+			transform: rotateZ(0deg);
+		}
+		.card-drop-preview {
+			background-color: rgba(150, 150, 200, 0.2);
+			border: 2px dashed #abc;
+			margin: 5px;
+		}
+	}
+}

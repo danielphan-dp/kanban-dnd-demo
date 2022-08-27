@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+// paddings for specific sides
+$padding: 10px;
+$padding-left: 10px;
+$padding-right: 10px;
+$padding-top: 10px;
+$padding-bottom: 10px;
+
+// columns dimensions
+$column-header-height: 36px;
+$column-footer-height: 36px;
+$column-border-radius: 3px;
+$card-border-radius: 3px;
+
+// components colors
+$app-main-text-color: #333;
+$board-bg-color: rgb(245, 245, 245);
+$list-bg-color: rgb(208, 208, 208);
+$common-element-bg: darken($list-bg-color, 15);
+$app-bar-bg-color: rgb(128, 128, 128);
+
+// app bar settings
+$navbar-app-height: 4vh;
+$navbar-board-height: 5vh;
+$board-content-height: 91vh;
+
+// background color for board
+$board-bg-color: rgb(245, 245, 245);
+$alert-danger: #ee5253;
+
+// responsive design
+$screen-lg: 1201px;
+$screen-md: 992px;
+$screen-sm: 768px;
+$screen-phone: 480px;
+$screen-i6-down: '(max-width: 375px)';
